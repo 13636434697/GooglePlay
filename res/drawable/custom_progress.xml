@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--layer是层的意思，这2个添加在一起的话，就是层叠在一起-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--2张图叠加在一起，同时转，而且是方向相反-->
+    <!--设置一个图片-->
+    <!--从多少度转到多少度，旋转的中心点-->
+    <!--第一个图片的角度大一点，看上去会速度会快点，这样加载的图片就好看点-->
+    <item>
+        <rotate
+            android:drawable="@drawable/spinner_big_inner"
+            android:fromDegrees="0"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toDegrees="720" />
+    </item>
+    <item>
+        <rotate
+            android:drawable="@drawable/spinner_big_outer"
+            android:fromDegrees="360"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toDegrees="0" />
+    </item>
+
+</layer-list>

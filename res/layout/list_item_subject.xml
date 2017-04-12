@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--自定义命名空间-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:googleplay="http://schemas.Android.com/apk/res/com.xu.googleplay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/list_item_bg_selector"
+        android:orientation="vertical" >
+
+        <!--直接ImageView会有白边，裁剪缩放都不行，而且大小包裹内容的话也不行，要写死!-->
+        <!--这里就自定义一个控件，宽度就填充屏幕，高度不确定是根据当时的情况来动态设置-->
+        <!--动态设置，宽除以高，成一个比例，自定义了一个幀布局，让ImageView填充就可以了-->
+
+        <!--这里需要拷贝全局路径，自定义属性的方式来，自定义一个比例-->
+        <!--这里指定的宽高，必须要写，虽然写了包裹内容，但是是未确定的-->
+        <com.xu.googleplay.ui.view.RatioLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            googleplay:ratio="2.43" >
+
+            <ImageView
+                android:id="@+id/iv_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/subject_default" />
+        </com.xu.googleplay.ui.view.RatioLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="标题"
+            android:textColor="#000"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--内容区域只是抽屉的一部分，根部局就是整体的抽屉效果-->
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--高写死，不写死的话有bug，还是全屏的。背景也必须设置进来，因为底层必须有一个背景。-->
+        <com.xu.googleplay.ui.view.PagerTab
+            android:id="@+id/pager_tab"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/bg_tab" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="hello_world" />
+    </LinearLayout>
+
+    <!--上面是内容区域，下面是抽屉区域-->
+    <FrameLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="#000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我是侧边栏"
+            android:textColor="#fff" />
+    </FrameLayout>
+
+</android.support.v4.widget.DrawerLayout>

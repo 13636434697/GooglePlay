@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义属性-->
+    <declare-styleable name="RatioLayout">
+        <!--比例是2.43是浮点型的小数-->
+        <attr name="ratio" format="float" />
+    </declare-styleable>
+
+</resources>
